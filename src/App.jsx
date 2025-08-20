@@ -347,11 +347,44 @@ function App() {
         <>
           <h1>OCEAN Personality Test</h1>
           <div className="welcome-screen">
-            <div className="watercolour-animation">
-              <svg width="180" height="120" viewBox="0 0 180 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <ellipse className="wc-blob1" cx="60" cy="60" rx="50" ry="35" fill="#b3c2d1" fillOpacity="0.7" />
-                <ellipse className="wc-blob2" cx="120" cy="50" rx="35" ry="25" fill="#7fa1c4" fillOpacity="0.6" />
-                <ellipse className="wc-blob3" cx="90" cy="90" rx="30" ry="18" fill="#e0e7ef" fillOpacity="0.5" />
+            <div className="cartoon-animation">
+              {/* Cartoon Characters Animation */}
+              <svg width="320" height="140" viewBox="0 0 320 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+                {/* Character 1: Mouse */}
+                <g className="char-mouse">
+                  <ellipse cx="60" cy="90" rx="30" ry="22" fill="#fbeee6" />
+                  <ellipse cx="45" cy="70" rx="12" ry="12" fill="#b3c2d1" />
+                  <ellipse cx="75" cy="70" rx="12" ry="12" fill="#b3c2d1" />
+                  <ellipse cx="60" cy="90" rx="18" ry="14" fill="#e0bfae" />
+                  <ellipse cx="54" cy="88" rx="2.5" ry="3.5" fill="#333" />
+                  <ellipse cx="66" cy="88" rx="2.5" ry="3.5" fill="#333" />
+                  <ellipse cx="60" cy="97" rx="5" ry="2" fill="#fff" />
+                  <ellipse cx="60" cy="100" rx="7" ry="2" fill="#d9a88a" />
+                </g>
+                {/* Character 2: Duck */}
+                <g className="char-duck">
+                  <ellipse cx="160" cy="100" rx="28" ry="20" fill="#fffbe6" />
+                  <ellipse cx="145" cy="85" rx="10" ry="10" fill="#ffe066" />
+                  <ellipse cx="175" cy="85" rx="10" ry="10" fill="#ffe066" />
+                  <ellipse cx="160" cy="100" rx="15" ry="12" fill="#ffe066" />
+                  <ellipse cx="154" cy="98" rx="2.5" ry="3.5" fill="#333" />
+                  <ellipse cx="166" cy="98" rx="2.5" ry="3.5" fill="#333" />
+                  <ellipse cx="160" cy="107" rx="6" ry="2" fill="#fff" />
+                  <ellipse cx="160" cy="110" rx="8" ry="2" fill="#f7c873" />
+                </g>
+                {/* Character 3: Dog */}
+                <g className="char-dog">
+                  <ellipse cx="260" cy="95" rx="26" ry="18" fill="#e0e7ef" />
+                  <ellipse cx="245" cy="80" rx="9" ry="9" fill="#b3c2d1" />
+                  <ellipse cx="275" cy="80" rx="9" ry="9" fill="#b3c2d1" />
+                  <ellipse cx="260" cy="95" rx="14" ry="10" fill="#bfae9e" />
+                  <ellipse cx="254" cy="93" rx="2.5" ry="3.5" fill="#333" />
+                  <ellipse cx="266" cy="93" rx="2.5" ry="3.5" fill="#333" />
+                  <ellipse cx="260" cy="102" rx="5" ry="2" fill="#fff" />
+                  <ellipse cx="260" cy="105" rx="7" ry="2" fill="#d9a88a" />
+                </g>
+                {/* Ground shadow */}
+                <ellipse cx="160" cy="130" rx="120" ry="10" fill="#e0e7ef" fillOpacity="0.5" />
               </svg>
             </div>
             <p style={{ margin: '2rem 0 1.5rem 0', fontSize: '1.15rem' }}>
@@ -431,7 +464,17 @@ function App() {
       {screen === 'result' && (
         <>
           <h1>OCEAN Personality Test</h1>
-          <div className="result">
+          <div className="result" style={{
+            marginTop: '2rem',
+            background: 'linear-gradient(135deg, #e0e7ef 0%, #f5f7fa 100%)',
+            borderRadius: '20px',
+            boxShadow: '0 6px 32px rgba(79,140,255,0.10)',
+            padding: '2.5rem 1.5rem 2.5rem 1.5rem',
+            maxWidth: 520,
+            marginLeft: 'auto',
+            marginRight: 'auto',
+            border: '1.5px solid #b3c2d1',
+          }}>
             <h2>Your OCEAN Profile</h2>
             {/* Radar Chart */}
             <div style={{ maxWidth: 420, margin: '0 auto 2rem auto', background: '#f5f7fa', borderRadius: 16, padding: '1.5rem 0.5rem' }}>
@@ -509,9 +552,9 @@ function App() {
                         <li key={idx} style={{marginBottom: '0.3rem'}}>{hobby}</li>
                       ))}
                     </ul>
-                    <button className="find-hobby-btn" style={{marginTop: '1.2rem'}} onClick={handleFindHobbyNearMe}>
+                    <button className="find-hobby-btn center-btn" style={{marginTop: '1.2rem'}} onClick={handleFindHobbyNearMe}>
                       Find Hobby Near Me
-        </button>
+                    </button>
                   </div>
                 </>
               );

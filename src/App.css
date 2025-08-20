@@ -93,6 +93,25 @@
 
 .result {
   margin-top: 2rem;
+  box-shadow: none;
+  background: none;
+  border-radius: 0;
+  padding: 0;
+}
+
+.result-ending {
+  background: #f5f7fa;
+  border-radius: 12px;
+  padding: 1.2rem 1rem;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 2px 8px rgba(79,140,255,0.07);
+}
+.result-hobbies {
+  background: #e0e7ef;
+  border-radius: 12px;
+  padding: 1.2rem 1rem;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 2px 8px rgba(79,140,255,0.07);
 }
 
 .welcome-screen {
@@ -240,4 +259,45 @@
 .find-hobby-btn:hover {
   background: linear-gradient(90deg, #4f8cff 0%, #38c6ff 100%);
   transform: translateY(-2px) scale(1.04);
+}
+
+.center-btn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cartoon-animation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 140px;
+  margin-bottom: 1.5rem;
+}
+.char-mouse {
+  animation: mouse-bounce 2.5s ease-in-out infinite alternate;
+}
+.char-duck {
+  animation: duck-wave 3.2s ease-in-out infinite alternate;
+}
+.char-dog {
+  animation: dog-bounce 2.8s ease-in-out infinite alternate;
+}
+@keyframes mouse-bounce {
+  0% { transform: translateY(0) scale(1); }
+  30% { transform: translateY(-8px) scale(1.04, 0.96); }
+  60% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(2px) scale(0.98, 1.02); }
+}
+@keyframes duck-wave {
+  0% { transform: rotate(-2deg) translateY(0); }
+  20% { transform: rotate(4deg) translateY(-6px); }
+  50% { transform: rotate(-2deg) translateY(0); }
+  100% { transform: rotate(-4deg) translateY(2px); }
+}
+@keyframes dog-bounce {
+  0% { transform: translateY(0) scale(1); }
+  25% { transform: translateY(-6px) scale(1.03, 0.97); }
+  60% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(3px) scale(0.97, 1.03); }
 }
